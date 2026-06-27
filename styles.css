@@ -1,0 +1,481 @@
+:root {
+  color-scheme: light;
+  --paper: #fbfaf7;
+  --ink: #11100f;
+  --muted: #6e6a62;
+  --line: #d9d4cb;
+  --clay: #b87945;
+  --sky: #9ab8c5;
+  --moss: #757c55;
+  --white: rgba(255, 253, 248, 0.58);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(17, 16, 15, 0.026) 1px, transparent 1px),
+    linear-gradient(rgba(17, 16, 15, 0.022) 1px, transparent 1px),
+    var(--paper);
+  background-size: 36px 36px;
+  font-family: "Bradley Hand", "Segoe Print", "Marker Felt", "Comic Sans MS", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.site-shell {
+  min-height: 100vh;
+  padding: clamp(24px, 5vw, 56px);
+}
+
+.gate {
+  position: relative;
+  min-height: calc(100vh - clamp(48px, 10vw, 112px));
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 28px;
+}
+
+.public-join {
+  position: fixed;
+  top: clamp(18px, 3vw, 34px);
+  right: clamp(18px, 3vw, 34px);
+  z-index: 2;
+  padding: 11px 15px;
+  border: 1.5px solid var(--ink);
+  background: rgba(154, 184, 197, 0.22);
+  box-shadow: 2px 2px 0 rgba(17, 16, 15, 0.84);
+  color: var(--ink);
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.public-join:hover {
+  transform: translate(-1px, -1px);
+}
+
+.brand-lockup {
+  width: min(760px, 88vw);
+  padding: clamp(20px, 4vw, 42px);
+}
+
+.brand-lockup img,
+.club-header img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: contrast(1.08);
+}
+
+.password-panel {
+  width: min(460px, 100%);
+  display: grid;
+  gap: 12px;
+  text-align: center;
+}
+
+.password-panel label {
+  font-size: 0.84rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.password-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.password-row input,
+.password-row button,
+.tab,
+.link-card,
+.product,
+.route-note {
+  border: 1.5px solid var(--ink);
+  background: var(--white);
+  box-shadow: 2px 2px 0 rgba(17, 16, 15, 0.84);
+}
+
+.password-row input {
+  min-width: 0;
+  padding: 13px 14px;
+}
+
+.password-row button,
+.tab {
+  cursor: pointer;
+  padding: 13px 18px;
+  color: var(--ink);
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.password-row button:hover,
+.tab:hover,
+.link-card:hover,
+.product a:hover {
+  transform: translate(-1px, -1px);
+}
+
+.hint {
+  min-height: 20px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.hint.is-error {
+  color: #9f2f25;
+}
+
+.bike-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: rgba(251, 250, 247, 0.94);
+}
+
+.bike-road {
+  position: relative;
+  width: 100vw;
+  height: min(360px, 58vw);
+}
+
+.bike-drawing {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(620px, 88vw);
+  height: auto;
+  transform: translate(95vw, -50%);
+  filter: contrast(1.08);
+}
+
+.bike-transition.is-riding .bike-drawing {
+  animation: bike-swipe 1350ms cubic-bezier(0.68, 0, 0.28, 1) forwards;
+}
+
+@keyframes bike-swipe {
+  0% {
+    transform: translate(95vw, -50%);
+  }
+
+  42% {
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    transform: translate(-155vw, -50%);
+  }
+}
+
+.club-home {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  animation: page-in 420ms ease both;
+}
+
+.club-header {
+  display: grid;
+  grid-template-columns: minmax(210px, 340px) 1fr;
+  align-items: center;
+  gap: clamp(20px, 5vw, 56px);
+  margin-bottom: clamp(34px, 7vw, 74px);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.tab {
+  min-width: 112px;
+  min-height: 48px;
+  border-radius: 2px;
+}
+
+.tab.is-active {
+  background: var(--sky);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.is-active {
+  display: block;
+}
+
+.intro {
+  width: min(720px, 100%);
+  margin-bottom: 28px;
+}
+
+.intro.compact {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--moss);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  max-width: 14ch;
+  margin-bottom: 14px;
+  font-weight: 500;
+  line-height: 1.05;
+  transform: rotate(-0.4deg);
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7.2vw, 5.8rem);
+}
+
+h2 {
+  font-size: clamp(2.1rem, 5.8vw, 4.4rem);
+}
+
+.intro p:not(.eyebrow) {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.6;
+}
+
+.content-bike {
+  position: relative;
+  width: min(560px, 100%);
+  height: auto;
+  margin-top: 24px;
+  overflow: visible;
+}
+
+.content-bike img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: contrast(1.08);
+}
+
+.club-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 230px)) minmax(260px, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.link-card {
+  min-height: 156px;
+  display: grid;
+  align-content: space-between;
+  padding: 20px;
+  text-decoration: none;
+  border-radius: 2px;
+  position: relative;
+}
+
+.link-card::after,
+.product::after,
+.route-note::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(17, 16, 15, 0.12);
+  pointer-events: none;
+}
+
+.link-card span,
+.product a {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.link-card strong {
+  max-width: 8ch;
+  font-size: 1.85rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.route-note {
+  min-height: 170px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  place-items: center;
+  gap: 12px;
+  padding: 22px;
+  color: var(--ink);
+  border-radius: 2px;
+  position: relative;
+  transform: rotate(0.3deg);
+}
+
+.route-note span {
+  display: inline-block;
+  font-size: clamp(1.7rem, 4vw, 3.4rem);
+  line-height: 1;
+  transform: rotate(-3deg);
+}
+
+.route-note span:nth-child(2) {
+  color: var(--clay);
+  transform: rotate(2deg);
+}
+
+.route-note span:nth-child(3) {
+  color: var(--moss);
+  transform: rotate(-1deg);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.product {
+  min-height: 330px;
+  display: grid;
+  align-content: space-between;
+  gap: 14px;
+  padding: 22px;
+  border-radius: 2px;
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  font-size: clamp(4rem, 11vw, 7rem);
+  border-radius: 2px;
+}
+
+.product h3 {
+  margin-bottom: 6px;
+  font-size: 1.35rem;
+}
+
+.product p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.product a {
+  justify-self: start;
+  text-decoration: none;
+  border-bottom: 2px solid var(--ink);
+}
+
+@media (max-width: 760px) {
+  .site-shell {
+    padding: 18px;
+  }
+
+  .club-header,
+  .club-grid,
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .club-header {
+    justify-items: center;
+    margin-bottom: 38px;
+  }
+
+  .club-header img {
+    max-width: 310px;
+  }
+
+  .tabs {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .tab {
+    flex: 1 1 130px;
+  }
+
+  .password-row {
+    grid-template-columns: 1fr;
+  }
+
+  .public-join {
+    position: absolute;
+    justify-self: end;
+    top: 0;
+    right: 0;
+    max-width: calc(100vw - 36px);
+  }
+
+  .link-card {
+    min-height: 135px;
+  }
+
+  h1,
+  h2 {
+    max-width: 11ch;
+  }
+
+  .route-note {
+    grid-template-columns: 1fr;
+    min-height: 220px;
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

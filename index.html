@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Blue Cranes Cycling Club">
+    <title>Blue Cranes Cycling Club</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="site-shell">
+      <section class="gate" id="gate" aria-labelledby="gate-title">
+        <a class="public-join" href="https://wa.me/00000000000?text=Hi%20Blue%20Cranes%2C%20I%27d%20like%20to%20request%20to%20join." target="_blank" rel="noreferrer">
+          Request to join
+        </a>
+        <div class="brand-lockup">
+          <img src="assets/blue-cranes-logo-transparent.png" alt="Blue Cranes Cycling Club sketch logo">
+        </div>
+        <form class="password-panel" id="password-form">
+          <label for="club-password" id="gate-title">Members only</label>
+          <div class="password-row">
+            <input id="club-password" name="password" type="password" autocomplete="current-password" placeholder="Enter password">
+            <button type="submit">Enter</button>
+          </div>
+          <p class="hint" id="password-message">Use password: cranes</p>
+        </form>
+      </section>
+
+      <section class="bike-transition" id="bike-transition" hidden aria-hidden="true">
+        <div class="bike-road">
+          <img class="bike-drawing" src="assets/bike-drawn-transparent.png" alt="">
+        </div>
+      </section>
+
+      <section class="club-home" id="club-home" hidden>
+        <header class="club-header">
+          <img src="assets/blue-cranes-logo-transparent.png" alt="Blue Cranes Cycling Club sketch logo">
+          <nav class="tabs" aria-label="Club sections">
+            <button class="tab is-active" type="button" data-tab="club">Club</button>
+            <button class="tab" type="button" data-tab="lifestyle">Lifestyle</button>
+            <button class="tab" type="button" data-tab="cycling">Cycling Kit</button>
+          </nav>
+        </header>
+
+        <section class="tab-panel is-active" id="club" aria-labelledby="club-tab">
+          <div class="intro">
+            <p class="eyebrow">Blue Cranes Cycling Club</p>
+            <h1>Two big, two small, then coffee.</h1>
+            <p>Simple rides, clean kit, cafe stops, and a quiet little corner for members.</p>
+            <div class="content-bike">
+              <img src="assets/bike-drawn-transparent.png" alt="">
+            </div>
+          </div>
+          <div class="club-grid">
+            <a class="link-card" href="https://www.strava.com/clubs/" target="_blank" rel="noreferrer">
+              <span>Strava</span>
+              <strong>Join the club</strong>
+            </a>
+            <a class="link-card" href="https://chat.whatsapp.com/" target="_blank" rel="noreferrer">
+              <span>WhatsApp</span>
+              <strong>Group chat</strong>
+            </a>
+            <div class="route-note" aria-label="Ride format note">
+              <span>2 big</span>
+              <span>2 small</span>
+              <span>cafe?</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="lifestyle" aria-labelledby="lifestyle-tab">
+          <div class="intro compact">
+            <p class="eyebrow">Lifestyle merch</p>
+            <h2>Off-bike pieces for the club table.</h2>
+          </div>
+          <div class="product-grid">
+            <article class="product">
+              <span class="product-image">T</span>
+              <h3>Logo tee</h3>
+              <p>Soft cotton tee with the crane sketch on the chest.</p>
+              <a href="#" aria-label="Open lifestyle store">Store coming soon</a>
+            </article>
+            <article class="product">
+              <span class="product-image">C</span>
+              <h3>Cafe cap</h3>
+              <p>Low-key cap for post-ride coffee and everyday use.</p>
+              <a href="#" aria-label="Open lifestyle store">Store coming soon</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="cycling" aria-labelledby="cycling-tab">
+          <div class="intro compact">
+            <p class="eyebrow">Cycling merch</p>
+            <h2>Ride kit with a simple linework identity.</h2>
+          </div>
+          <div class="product-grid">
+            <article class="product">
+              <span class="product-image">J</span>
+              <h3>Club jersey</h3>
+              <p>Minimal race-cut jersey concept for weekend rides.</p>
+              <a href="#" aria-label="Open cycling kit store">Store coming soon</a>
+            </article>
+            <article class="product">
+              <span class="product-image">B</span>
+              <h3>Bibs</h3>
+              <p>Matching bib shorts with small Blue Cranes detailing.</p>
+              <a href="#" aria-label="Open cycling kit store">Store coming soon</a>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

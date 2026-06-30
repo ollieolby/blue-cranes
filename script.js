@@ -6,7 +6,7 @@ const bikeTransition = document.querySelector("#bike-transition");
 const passwordForm = document.querySelector("#password-form");
 const passwordInput = document.querySelector("#club-password");
 const passwordMessage = document.querySelector("#password-message");
-const tabs = document.querySelectorAll(".tab");
+const tabs = document.querySelectorAll(".tab[data-tab]");
 const panels = document.querySelectorAll(".tab-panel");
 
 if (new URLSearchParams(window.location.search).has("reset")) {

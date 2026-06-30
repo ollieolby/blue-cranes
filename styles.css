@@ -215,7 +215,11 @@ input {
 .tab {
   min-width: 112px;
   min-height: 48px;
+  display: grid;
+  place-items: center;
   border-radius: 2px;
+  text-align: center;
+  text-decoration: none;
 }
 
 .tab.is-active {
@@ -279,22 +283,6 @@ h2 {
   line-height: 1.6;
 }
 
-.content-bike {
-  position: relative;
-  width: min(560px, 100%);
-  height: auto;
-  margin-top: 24px;
-  overflow: visible;
-}
-
-.content-bike img {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  filter: contrast(1.08);
-}
 
 .club-grid {
   display: grid;
@@ -477,5 +465,45 @@ h2 {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+.coming-soon {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.coming-panel {
+  width: min(760px, 100%);
+  display: grid;
+  gap: 18px;
+}
+
+.coming-panel img {
+  width: min(360px, 82vw);
+  height: auto;
+  display: block;
+  filter: contrast(1.08);
+}
+
+.coming-panel p:not(.eyebrow) {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.6;
+}
+
+.coming-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 230px));
+  gap: 18px;
+  margin-top: 14px;
+}
+
+@media (max-width: 760px) {
+  .coming-actions {
+    grid-template-columns: 1fr;
   }
 }

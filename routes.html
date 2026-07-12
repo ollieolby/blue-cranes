@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Blue Cranes Cycling Club route book">
+    <title>Routes | Blue Cranes Cycling Club</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="site-shell routes-page">
+      <header class="routes-header">
+        <a class="routes-logo" href="index.html" aria-label="Back to Blue Cranes home">
+          <img src="assets/blue-cranes-logo-transparent.png" alt="Blue Cranes Cycling Club sketch logo">
+        </a>
+        <nav class="tabs" aria-label="Route page navigation">
+          <a class="tab tab-link" href="index.html">Club</a>
+          <a class="tab tab-link" href="https://blue-cranes-shop.fourthwall.com" target="_blank" rel="noreferrer">Lifestyle</a>
+          <a class="tab tab-link" href="cycling-kit.html">Cycling Kit</a>
+        </nav>
+      </header>
+
+      <section class="routes-hero" aria-labelledby="routes-title">
+        <p class="eyebrow">Route book</p>
+        <h1 id="routes-title">Richmond Park starts, cafe finishes.</h1>
+        <p>All routes roll out from Richmond Park Cafe. Filter by mood, search by name, then open the Strava route when you are ready to ride.</p>
+      </section>
+
+      <section class="routes-tools" aria-label="Route filters">
+        <label class="search-field" for="route-search">
+          <span>Search</span>
+          <input id="route-search" type="search" placeholder="Box Hill, gravel, short...">
+        </label>
+        <div class="route-filters" id="route-filters" aria-label="Route categories"></div>
+      </section>
+
+      <section class="routes-grid" id="routes-grid" aria-live="polite"></section>
+    </main>
+
+    <script src="routes-config.js"></script>
+    <script src="routes.js"></script>
+  </body>
+</html>

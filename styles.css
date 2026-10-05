@@ -654,10 +654,20 @@ h2 {
   background: rgba(255, 253, 248, 0.6);
 }
 
-.route-card a {
+.route-actions {
   align-self: end;
-  justify-self: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-top: auto;
+}
+
+.route-card:target {
+  background: var(--sky);
+}
+
+.route-card a {
+  justify-self: start;
   text-decoration: none;
   border-bottom: 2px solid var(--ink);
 }

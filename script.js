@@ -8,6 +8,7 @@ const passwordInput = document.querySelector("#club-password");
 const passwordMessage = document.querySelector("#password-message");
 const tabs = document.querySelectorAll(".tab[data-tab]");
 const panels = document.querySelectorAll(".tab-panel");
+const nextUrl = new URLSearchParams(window.location.search).get("next");
 
 if (new URLSearchParams(window.location.search).has("reset")) {
   sessionStorage.removeItem("blue-cranes-unlocked");
@@ -19,6 +20,10 @@ function unlockClub() {
   bikeTransition.classList.remove("is-riding");
   clubHome.hidden = false;
   sessionStorage.setItem("blue-cranes-unlocked", "true");
+
+  if (nextUrl) {
+    window.location.assign(nextUrl);
+  }
 }
 
 function rideToClub() {

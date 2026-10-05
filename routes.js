@@ -15,6 +15,10 @@ function routeMeta(route) {
   ];
 }
 
+function routeShareUrl(route) {
+  return `${window.location.pathname}#${route.id}`;
+}
+
 function renderFilters() {
   filterWrap.innerHTML = categories
     .map((category) => `<button class="filter-chip${category === activeCategory ? " is-active" : ""}" type="button" data-category="${category}">${category}</button>`)
@@ -36,7 +40,7 @@ function renderRoutes() {
 
   routeGrid.innerHTML = visibleRoutes
     .map((route) => `
-      <article class="route-card">
+      <article class="route-card" id="${route.id}">
         <span class="route-tag">${route.category}</span>
         <h2>${route.title}</h2>
         <ul class="route-meta">
@@ -44,7 +48,10 @@ function renderRoutes() {
         </ul>
         <p>${route.description}</p>
         <p class="route-start">Starts at ${route.start}</p>
-        <a href="${route.stravaUrl}" target="_blank" rel="noreferrer">Open Strava route</a>
+        <div class="route-actions">
+          <a href="${route.stravaUrl}" target="_blank" rel="noreferrer">Open Strava route</a>
+          <a href="${routeShareUrl(route)}">Share this route</a>
+        </div>
       </article>
     `)
     .join("");
